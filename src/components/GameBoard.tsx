@@ -1,5 +1,5 @@
 import { useState, useCallback } from 'react';
-import type { GameState } from '../types';
+import type { GameState, WinningLine } from '../types';
 import { checkForBingo, countFilled } from '../lib/bingoChecker';
 import { detectWordsWithAliases } from '../lib/wordDetector';
 import { useSpeechRecognition } from '../hooks/useSpeechRecognition';
@@ -11,7 +11,7 @@ import { generateCard } from '../lib/cardGenerator';
 interface Props {
   game: GameState;
   setGame: React.Dispatch<React.SetStateAction<GameState>>;
-  onWin: (winningLine: any, winningWord: string) => void;
+  onWin: (winningLine: WinningLine, winningWord: string) => void;
 }
 
 export function GameBoard({ game, setGame, onWin }: Props) {

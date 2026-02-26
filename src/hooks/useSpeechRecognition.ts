@@ -13,7 +13,7 @@ interface SpeechRecognitionErrorEvent extends Event {
 
 const SpeechRecognitionCtor =
   typeof window !== 'undefined'
-    ? (window as any).SpeechRecognition || (window as any).webkitSpeechRecognition
+    ? (window as unknown as Record<string, unknown>).SpeechRecognition || (window as unknown as Record<string, unknown>).webkitSpeechRecognition
     : null;
 
 export function useSpeechRecognition() {
@@ -25,7 +25,7 @@ export function useSpeechRecognition() {
     error: null,
   });
 
-  const recognitionRef = useRef<any>(null);
+  const recognitionRef = useRef<InstanceType<typeof SpeechRecognitionCtor> | null>(null);
   const onResultCallback = useRef<((transcript: string) => void) | null>(null);
 
   useEffect(() => {
