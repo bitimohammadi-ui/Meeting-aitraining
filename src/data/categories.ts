@@ -55,4 +55,22 @@ export const CATEGORIES: Category[] = [
       'branch', 'release', 'rollback', 'feature flag', 'A/B test',
     ],
   },
+  {
+    id: 'sports',
+    name: 'Sports',
+    description: 'Game day commentary, stats, and hot takes',
+    icon: '🏀',
+    words: [
+      'touchdown', 'slam dunk', 'home run', 'hat trick', 'overtime',
+      'playoffs', 'championship', 'MVP', 'rookie', 'draft pick',
+      'free agent', 'trade deadline', 'injury report', 'game changer',
+      'underdog', 'dynasty', 'comeback', 'shutout', 'penalty',
+      'foul', 'red card', 'offside', 'instant replay', 'challenge flag',
+      'halftime', 'buzzer beater', 'Hail Mary', 'triple double', 'grand slam',
+      'perfect game', 'no-hitter', 'walk-off', 'goaltender', 'power play',
+      'fast break', 'full court press', 'pick and roll', 'blitz',
+      'two-minute warning', 'sudden death', 'shootout', 'wildcard',
+      'seed', 'bracket', 'upset',
+    ],
+  },
 ];
