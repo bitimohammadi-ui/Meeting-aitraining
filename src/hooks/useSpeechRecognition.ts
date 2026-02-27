@@ -11,10 +11,9 @@ interface SpeechRecognitionErrorEvent extends Event {
   message: string;
 }
 
-const SpeechRecognitionCtor =
-  typeof window !== 'undefined'
-    ? (window as unknown as Record<string, unknown>).SpeechRecognition || (window as unknown as Record<string, unknown>).webkitSpeechRecognition
-    : null;
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const win = typeof window !== 'undefined' ? (window as any) : null;
+const SpeechRecognitionCtor = win?.SpeechRecognition || win?.webkitSpeechRecognition || null;
 
 export function useSpeechRecognition() {
   const [state, setState] = useState<SpeechRecognitionState>({
